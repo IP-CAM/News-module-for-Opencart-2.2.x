@@ -25,7 +25,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<a href="<?php echo $news['view']; ?>"><?php echo $text_view; ?></a>
+						<a href="<?php echo $news['view']; ?>"><?php echo $text_more; ?></a>
 					</div>
 					<div class="col-md-6 text-right">
 						<?php echo $news['date_added']; ?>

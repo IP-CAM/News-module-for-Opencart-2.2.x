@@ -49,10 +49,8 @@ class ControllerInformationNews extends Controller {
 		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($total - 10)) ? $total : ((($page - 1) * 10) + 10), $total, ceil($total / 10));
 
 		$data['heading_title'] = $this->language->get('heading_title');
-		$data['text_title'] = $this->language->get('text_title');
-		$data['text_description'] = $this->language->get('text_description');
 		$data['text_date'] = $this->language->get('text_date');
-		$data['text_view'] = $this->language->get('text_view');
+		$data['text_more'] = $this->language->get('text_more');
 	 
 		$all_news = $this->model_extension_news->getAllNews($filter_data);
 	 
@@ -127,11 +125,6 @@ class ControllerInformationNews extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			/*if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/information/news.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/information/news.tpl', $data));
-			} else {
-				$this->response->setOutput($this->load->view('default/template/information/news.tpl', $data));
-			}*/
 			$this->response->setOutput($this->load->view('information/news', $data));
 		} else {
 			$data['breadcrumbs'][] = array(
@@ -153,11 +146,7 @@ class ControllerInformationNews extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
-			} else {
-				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
-			}
+			$this->response->setOutput($this->load->view('error/not_found', $data));
 
 		}
 	}
