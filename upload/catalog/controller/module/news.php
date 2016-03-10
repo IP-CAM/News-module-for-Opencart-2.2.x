@@ -16,7 +16,7 @@ class ControllerModuleNews extends Controller {
 		$all_news = $this->model_extension_news->getAllNews($filter_data);
 	 
 		$data['all_news'] = array();
-
+		$data['text_more'] = $this->language->get('text_more');
 
 		foreach ($all_news as $news) {
 			if ($news['image']) {
