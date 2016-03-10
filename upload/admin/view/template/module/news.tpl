@@ -40,6 +40,7 @@
             </div>
           </div>
         </form>
+        <a href="<?php echo $list_href; ?>" class="btn btn-primary"><?php echo $button_list; ?></a>
       </div>
     </div>
   </div>

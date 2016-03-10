@@ -20,6 +20,7 @@ class ControllerModuleNews extends Controller {
 		$data['heading_title'] = $this->language->get('heading_title');
 		
 		$data['text_edit'] = $this->language->get('text_edit');
+		$data['button_list'] = $this->language->get('button_list');
 		$data['text_enabled'] = $this->language->get('text_enabled');
 		$data['text_disabled'] = $this->language->get('text_disabled');
 		
@@ -33,6 +34,8 @@ class ControllerModuleNews extends Controller {
 		} else {
 			$data['error_warning'] = '';
 		}
+
+		$data['list_href'] = $this->url->link('extension/news', 'token=' . $this->session->data['token'], 'SSL');
 
 		$data['breadcrumbs'] = array();
 
