@@ -132,7 +132,7 @@ class ControllerInformationNews extends Controller {
 			} else {
 				$this->response->setOutput($this->load->view('default/template/information/news.tpl', $data));
 			}*/
-			$this->response->setOutput($this->load->view('information/news_list', $data));
+			$this->response->setOutput($this->load->view('information/news', $data));
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' 		=> $this->language->get('text_error'),
@@ -153,11 +153,11 @@ class ControllerInformationNews extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			/*if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
+			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
 			} else {
 				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
-			}*/
+			}
 
 		}
 	}
